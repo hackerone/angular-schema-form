@@ -80,6 +80,33 @@ gulp.task('non-minified-dist', function() {
   .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('minify-amd', function() {
+  gulp.src([
+    './src/define-head.js',
+    './src/module.js',
+    './src/sfPath.js',
+    './src/services/*.js',
+    './src/directives/*.js',
+    './src/define-tail.js'
+  ])
+  .pipe(concat('schema-form-amd.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('non-minified-dist-amd', function() {
+  gulp.src([
+    './src/define-head.js',
+    './src/module.js',
+    './src/sfPath.js',
+    './src/services/*.js',
+    './src/directives/*.js',
+    './src/define-tail.js'
+  ])
+  .pipe(concat('schema-form-amd.js'))
+  .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('jscs', function() {
   gulp.src('./src/**/*.js')
       .pipe(jscs());
@@ -87,9 +114,11 @@ gulp.task('jscs', function() {
 
 gulp.task('default', [
   'minify',
+  'minify-amd',
   'bootstrap',
   'bootstrap-datepicker',
-  'non-minified-dist'
+  'non-minified-dist',
+  'non-minified-dist-amd'
 ]);
 
 gulp.task('watch', function() {
