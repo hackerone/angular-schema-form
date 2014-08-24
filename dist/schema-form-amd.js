@@ -1,4 +1,4 @@
-define(['objectpath','tv4'], function(objectpath, tv4){
+define(['objectpath','tv4', 'angular-sanitize'], function(objectpath, tv4){
 
 		// register objectpath module
 		angular.module('ObjectPath', []).provider('ObjectPath', function(){
