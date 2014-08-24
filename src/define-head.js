@@ -2,11 +2,11 @@ define(['objectpath','tv4'], function(objectpath, tv4){
 
 		// register objectpath module
 		angular.module('ObjectPath', []).provider('ObjectPath', function(){
-			this.parse = object.parse;
-			this.stringify = object.stringify;
-			this.normalize = object.normalize;
+			this.parse = objectpath.parse;
+			this.stringify = objectpath.stringify;
+			this.normalize = objectpath.normalize;
 			this.$get = function(){
-				return object;
+				return objectpath;
 			};
 		});
 
