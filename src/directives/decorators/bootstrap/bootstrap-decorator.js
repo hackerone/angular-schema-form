@@ -11,6 +11,7 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider', function(de
     conditional: base + 'section.html',
     actions: base + 'actions.html',
     select: base + 'select.html',
+    multiselect: base + 'multiselect.html',
     checkbox: base + 'checkbox.html',
     checkboxes: base + 'checkboxes.html',
     number: base + 'default.html',
@@ -34,6 +35,7 @@ angular.module('schemaForm').config(['schemaFormDecoratorsProvider', function(de
   decoratorsProvider.createDirectives({
     textarea: base + 'textarea.html',
     select: base + 'select.html',
+    multiselect: base + 'multiselect.html',
     checkbox: base + 'checkbox.html',
     checkboxes: base + 'checkboxes.html',
     number: base + 'default.html',

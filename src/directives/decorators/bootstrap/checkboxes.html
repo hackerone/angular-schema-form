@@ -1,4 +1,4 @@
-<div sf-array="form" ng-model="$$value$$" class="form-group" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}">
+<div sf-array="form" ng-model="$$value$$" class="form-group {{ form.class }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}">
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <div class="checkbox" ng-repeat="val in titleMapValues track by $index" >
     <label>

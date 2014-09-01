@@ -1,4 +1,4 @@
-<div class="form-group" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
+<div class="form-group {{ form.class }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
 
   <input ng-show="form.key"

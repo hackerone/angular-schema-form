@@ -1,6 +1,6 @@
-<div class="form-group has-feedback" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}">
-  <label ng-show="showTitle()">{{form.title}}</label>
-  <textarea class="form-control"
+<div class="form-group has-feedback {{form.wrapclass}}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}">
+  <label ng-show="showTitle()" ng-class="{{form.labelclass}}">{{form.title}}</label>
+  <textarea class="form-control {{form.class}}"
             sf-changed="form"
             ng-model="$$value$$"
             ng-model-options="form.ngModelOptions"

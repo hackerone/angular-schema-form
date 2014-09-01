@@ -7,7 +7,9 @@
           sf-changed="form"
           class="form-control"
           schema-validate="form"
-          ng-options="item.value as item.name for item in form.titleMap">
+          data-url="{{item.url}}"
+          ng-options="item.value as item.name for item in form.titleMap"
+          selectize="{ labelField: 'name', valueField: 'value' }">
   </select>
   <div class="help-block"
        ng-show="(hasError() && errorMessage(schemaError())) || form.description"
