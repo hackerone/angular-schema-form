@@ -1320,6 +1320,11 @@ angular.module('schemaForm').directive('schemaValidate', ['sfValidator', functio
           viewValue = undefined;
         }
 
+        if(form.type == "multiselect")
+          form.schema.type = "array";
+
+
+
         var result = sfValidator.validate(form, viewValue);
 
         if (result.valid) {

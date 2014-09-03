@@ -8,7 +8,9 @@
           class="form-control"
           schema-validate="form"
           data-url="{{form.url}}"
-          selectize="{ labelField: 'name', valueField: 'value', options: form.titleMap }"></select>
+          multiple="true"
+          selectize="{ labelField: 'name', valueField: 'value', options: form.titleMap }">
+  </select>
   <div class="help-block"
        ng-show="(hasError() && errorMessage(schemaError())) || form.description"
        ng-bind-html="(hasError() && errorMessage(schemaError())) || form.description"></div>

@@ -25,13 +25,23 @@ gulp.task('bootstrap', function() {
                     root: 'directives/decorators/bootstrap/'
                   }))
     );
-  stream.queue(gulp.src('./src/directives/decorators/bootstrap/*.js'));
+  stream.queue(gulp.src(['./src/directives/decorators/bootstrap/*.js']));
 
   stream.done()
         .pipe(concat('bootstrap-decorator.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/'));
+});
 
+gulp.task('bootstrap-amd', function(){
+  gulp.src([
+    './src/define-bs-head.js',
+    './dist/bootstrap-decorator.min.js',
+    './src/define-tail.js'
+  ])
+  .pipe(concat('bootstrap-decorator-amd.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('bootstrap-datepicker', function() {
@@ -116,6 +126,7 @@ gulp.task('default', [
   'minify',
   'minify-amd',
   'bootstrap',
+  'bootstrap-amd',
   'bootstrap-datepicker',
   'non-minified-dist',
   'non-minified-dist-amd'
